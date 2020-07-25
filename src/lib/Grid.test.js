@@ -73,11 +73,13 @@ describe('Grid', function () {
       [0, 0, 0],
       [0, 0, 0],
     ];
-    expect(Grid.toggle(grid, { x: 1, y: 1 })).toEqual([
+    const toggledGrid = [
       [0, 0, 0],
       [0, 1, 0],
       [0, 0, 0],
       [0, 0, 0],
-    ]);
+    ];
+    expect(Grid.toggle(grid, { x: 1, y: 1 })).toEqual(toggledGrid);
+    expect(Grid.toggle(toggledGrid, { x: 1, y: 1 })).toEqual(grid);
   });
 });
