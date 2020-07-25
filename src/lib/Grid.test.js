@@ -82,4 +82,29 @@ describe('Grid', function () {
     expect(Grid.toggle(grid, { x: 1, y: 1 })).toEqual(toggledGrid);
     expect(Grid.toggle(toggledGrid, { x: 1, y: 1 })).toEqual(grid);
   });
+
+  test('resize', () => {
+    const grid = [
+      [0, 0, 0],
+      [0, 1, 1],
+      [0, 1, 1],
+    ];
+
+    const reduced = [
+      [0, 0],
+      [0, 1],
+    ];
+
+    const increased = [
+      [0, 0, 0],
+      [0, 1, 0],
+      [0, 0, 0],
+    ];
+
+    // reduce size should slice arrays
+    expect(Grid.resize(grid, 2, 2)).toEqual(reduced);
+
+    // increase size should add unfilled cells
+    expect(Grid.resize(reduced, 3, 3)).toEqual(increased);
+  });
 });
