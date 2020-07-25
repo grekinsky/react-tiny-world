@@ -1,0 +1,14 @@
+.grid {
+  border: 1px solid #666;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  flex: 1;
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}

@@ -1,0 +1,8 @@
+.grid-cell {
+  background-color: blue;
+  flex: 1;
+}
+
+.grid-cell--filled {
+  background-color: green;
+}
