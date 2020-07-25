@@ -104,8 +104,29 @@ export function countIslands(grid) {
  * @param {Number} height
  */
 export function resize(grid, width, height) {
-  // ToDo
-  return true;
+  let g = [...grid];
+  // modify rows (height)
+  if (height < g.length) {
+    // reduce size
+    g = g.slice(0, height);
+  } else if (height > g.length) {
+    // increase size
+    for (let i = grid.length; i < height; i++) {
+      g[i] = new Array(width).fill(0);
+    }
+  }
+
+  // for each row, modify columns
+  for (let i = 0; i < height; i++) {
+    if (width < g[i].length) {
+      // reduce size
+      g[i] = g[i].slice(0, width);
+    } else if (width > g[i].length) {
+      // increase size
+      Array.prototype.push.apply(g[i], new Array(width - g[i].length).fill(0));
+    }
+  }
+  return g;
 }
 
 /**
