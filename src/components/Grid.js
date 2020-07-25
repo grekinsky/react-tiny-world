@@ -1,5 +1,5 @@
 import React from 'react';
-import { countFilledCells, countIslands } from '../lib/Grid';
+import { countFilledCells, countIslands, toggle } from '../lib/Grid';
 import './Grid.css';
 import Cell from './Cell';
 
@@ -8,19 +8,8 @@ function Grid({ width, height }) {
     new Array(height).fill(new Array(width).fill(0)),
   );
 
-  function toggleGridItem(_x, _y) {
-    const g = grid.map((row, x) => {
-      if (_x !== x) {
-        return row;
-      }
-      return row.map((cell, y) => {
-        if (_x === x && _y === y) {
-          return cell === 0 ? 1 : 0;
-        }
-        return cell;
-      });
-    });
-    setGrid(g);
+  function clickItem(pos) {
+    setGrid(toggle(grid, pos));
   }
 
   return (
@@ -37,7 +26,7 @@ function Grid({ width, height }) {
             <Cell
               key={`${x},${y}`}
               filled={filled}
-              onClick={() => toggleGridItem(x, y)}
+              onClick={() => clickItem({ x, y })}
             />
           ))}
         </div>

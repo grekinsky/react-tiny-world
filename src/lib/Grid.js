@@ -107,3 +107,22 @@ export function resize(grid, width, height) {
   // ToDo
   return true;
 }
+
+/**
+ * Toggles the value of a cell in the grid
+ * @param {Array} grid bidimensional array of grid
+ * @param {Object} pos {x, y} coords of the cell
+ */
+export function toggle(grid, pos) {
+  return grid.map((row, x) => {
+    if (pos.x !== x) {
+      return row;
+    }
+    return row.map((cell, y) => {
+      if (pos.x === x && pos.y === y) {
+        return cell === 0 ? 1 : 0;
+      }
+      return cell;
+    });
+  });
+}

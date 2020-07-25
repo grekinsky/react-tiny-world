@@ -65,4 +65,19 @@ describe('Grid', function () {
       expect(Grid.countIslands(t.grid)).toEqual(t.islands);
     });
   });
+
+  test('toggle', () => {
+    const grid = [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ];
+    expect(Grid.toggle(grid, { x: 1, y: 1 })).toEqual([
+      [0, 0, 0],
+      [0, 1, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ]);
+  });
 });
