@@ -7,7 +7,7 @@
 
 .App-header {
   flex: 0 1;
-  background-color: #282c34;
+  background-color: #1565c0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -20,8 +20,72 @@
   flex: 1;
   display: flex;
   background-color: #fcfcfc;
-  flex-direction: column;
+  flex-direction: row;
   padding: 20px;
   justify-content: left;
   color: #666;
+}
+
+.App-panel {
+  flex: 1;
+  flex-direction: column;
+  flex: 0 0 200px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.App-panel-size,
+.App-panel-data {
+  margin-bottom: 20px;
+}
+
+.App-panel-size div,
+.App-panel-data div {
+  margin-top: 5px;
+}
+
+.App-panel-size .App-button {
+  margin-top: 10px;
+}
+
+.App-button {
+  background: none;
+  border: none;
+  background-color: #1565c0;
+  min-height: 35px;
+  min-width: 100px;
+  padding: 0 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 75ms;
+}
+
+.App-button:hover {
+  background-color: #003c8f;
+}
+
+.App-input {
+  background: none;
+  border: none;
+  background-color: #eeeeee;
+  min-height: 35px;
+  min-width: 100px;
+  padding: 0 10px;
+  color: black;
+  border-radius: 5px;
+  transition: background-color 75ms;
+  margin: 5px 0;
+}
+
+.App-label {
+  background: none;
+  min-height: 35px;
+  padding: 0 10px 0 0;
+  color: black;
+  margin: 5px 0;
+  font-size: 14px;
+  min-width: 70px;
+  display: inline-block;
+  text-align: right;
 }

@@ -1,8 +1,9 @@
 .grid-cell {
-  background-color: blue;
+  background-color: #2196f3;
   flex: 1;
+  transition: background-color 75ms;
 }
 
 .grid-cell--filled {
-  background-color: green;
+  background-color: #33691e;
 }

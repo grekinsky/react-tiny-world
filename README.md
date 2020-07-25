@@ -104,4 +104,19 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - Algorithms with Unit testing and
 - Proof of concept for UI:
 
-![First Iteration](/public/proof-of-concept-ui.png) <!-- .element height="50%" width="50%" -->
+![First Iteration](/public/proof-of-concept-ui.png)
+
+### Day 2
+
+- Add resize function to the Grid
+- Add Unit tests for resize function
+- Add resize dialog UI
+- Improve CSS for UI
+
+![Second Iteration](/public/ui-2.png)
+
+### Day 3 (tomorrow)
+
+- Go through the code and Refactor if needed
+- Add Unit tests for UI
+- Add code styling
