@@ -5,7 +5,7 @@ import Cell from './Cell';
 
 function Grid({ width, height }) {
   const [grid, setGrid] = React.useState(
-    new Array(height).fill(new Array(width).fill(0)),
+    new Array(height).fill(0).map(() => new Array(width).fill(0)),
   );
 
   function clickItem(pos) {
