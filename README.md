@@ -115,8 +115,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ![Second Iteration](/public/ui-2.png)
 
-### Day 3 (tomorrow)
+### Day 3
 
 - Go through the code and Refactor if needed
 - Add Unit tests for UI
+- Test coverage 100%
 - Add code styling
+- Clean up code
