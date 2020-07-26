@@ -4,9 +4,9 @@ import Cell from './Cell';
 
 function Grid({ onClickItem, grid }) {
   return (
-    <div className="grid">
+    <div className="grid" role="grid">
       {grid.map((row, x) => (
-        <div key={`r${x}`} className="grid-row">
+        <div key={`r${x}`} className="grid-row" role="row">
           {row.map((filled, y) => (
             <Cell
               key={`${x},${y}`}

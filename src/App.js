@@ -28,14 +28,16 @@ function App() {
         <Grid grid={grid} onClickItem={onClickItem} />
         <aside className="App-panel">
           <div className="App-panel-size">
-            <div>
-              <strong>Width: </strong>
-              {grid[0].length}
-            </div>
-            <div>
-              <strong>Height: </strong>
-              {grid.length}
-            </div>
+            <section>
+              <strong id="section-width-header">Width: </strong>
+              <span aria-labelledby="section-width-header">
+                {grid[0].length}
+              </span>
+            </section>
+            <section>
+              <strong id="section-height-header">Height: </strong>
+              <span aria-labelledby="section-height-header">{grid.length}</span>
+            </section>
             <button
               className="App-button"
               onClick={() => setResizeModalVisible(true)}
@@ -45,12 +47,16 @@ function App() {
           </div>
           <div className="App-panel-data">
             <div>
-              <strong>Filled: </strong>
-              {countFilledCells(grid)}
+              <strong id="section-filled-header">Filled: </strong>
+              <span aria-labelledby="section-filled-header">
+                {countFilledCells(grid)}
+              </span>
             </div>
             <div>
-              <strong>Islands: </strong>
-              {countIslands(grid)}
+              <strong id="section-islands-header">Islands: </strong>
+              <span aria-labelledby="section-islands-header">
+                {countIslands(grid)}
+              </span>
             </div>
           </div>
           <Resize
