@@ -6,6 +6,7 @@ function Cell({ filled, onClick }) {
     <div
       className={`grid-cell${filled ? ' grid-cell--filled' : ''}`}
       onClick={onClick}
+      role="gridcell"
     />
   );
 }

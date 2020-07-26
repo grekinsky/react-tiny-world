@@ -6,13 +6,17 @@ import './Resize.css';
 function Resize({ onResize, hide, isVisible, initialWidth, initialHeight }) {
   const [width, setWidth] = React.useState(initialWidth);
   const [height, setHeight] = React.useState(initialHeight);
+  const [error, setError] = React.useState('');
 
   return (
     isVisible && (
       <Modal
         title={'Resize Grid'}
         onAccept={() => {
-          if (width < 1 || height < 1) throw new Error('Invalid dimensions');
+          if (width < 1 || height < 1) {
+            setError('Invalid dimensions');
+            return;
+          }
           onResize(width, height);
           hide();
         }}
@@ -30,7 +34,10 @@ function Resize({ onResize, hide, isVisible, initialWidth, initialHeight }) {
             min={1}
             value={width}
             className="App-input"
-            onChange={(e) => setWidth(e.target.value)}
+            onChange={(e) => {
+              setError('');
+              setWidth(e.target.value);
+            }}
           />
         </div>
         <div>
@@ -43,9 +50,13 @@ function Resize({ onResize, hide, isVisible, initialWidth, initialHeight }) {
             min={1}
             value={height}
             className="App-input"
-            onChange={(e) => setHeight(e.target.value)}
+            onChange={(e) => {
+              setError('');
+              setHeight(e.target.value);
+            }}
           />
         </div>
+        <div className="resize-error">{error}</div>
       </Modal>
     )
   );
