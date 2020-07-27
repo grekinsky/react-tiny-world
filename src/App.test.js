@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, within, fireEvent } from '@testing-library/react';
 import App from './App';
+import { initialWidth, initialHeight } from './constants';
 
 describe('App', function () {
   let app, clickCell, hasData, isGridSize;
@@ -61,10 +62,10 @@ describe('App', function () {
     expect(title).toBeInTheDocument();
 
     // 02. The app shows a Grid component with 3 rows and 3 columns and all cells should not have "grid-cell--filled" class
-    isGridSize(3, 3);
+    isGridSize(initialWidth, initialHeight);
 
     // 03. The sidebar shows width: 3, height: 3, filled: 0, islands: 0
-    hasData(3, 3, 0, 0);
+    hasData(initialWidth, initialHeight, 0, 0);
 
     // 04. The app shows a button with "Resize" text
     (function () {
@@ -83,19 +84,19 @@ describe('App', function () {
     clickCell(1, 0);
 
     // 05. The sidebar shows width:3, height: 3, filled: 2, islands 1
-    hasData(3, 3, 2, 1);
+    hasData(initialWidth, initialHeight, 2, 1);
 
     // 08. The user clicks the {x: 2, y: 1} coords in the canvas
     clickCell(2, 1);
 
     // 07. The sidebar shows width:3, height: 3, filled: 3, islands 2
-    hasData(3, 3, 3, 2);
+    hasData(initialWidth, initialHeight, 3, 2);
 
     // 08. The user clicks the {x: 1, y: 0} coords in the canvas
     clickCell(1, 0, true);
 
     // 10. The sidebar shows width:3, height: 3, filled: 2, islands 2
-    hasData(3, 3, 2, 2);
+    hasData(initialWidth, initialHeight, 2, 2);
   });
 
   test('resize successful', () => {
@@ -104,7 +105,7 @@ describe('App', function () {
     clickCell(1, 0);
     clickCell(2, 1);
 
-    hasData(3, 3, 3, 2);
+    hasData(initialWidth, initialHeight, 3, 2);
 
     expect(() => app.getByRole('dialog')).toThrow();
     // 01. The user clicks the button with "Resize" text
@@ -122,11 +123,11 @@ describe('App', function () {
 
       // 03. The dialog shows a "width" input with a value of 3
       const inputWidth = within(dialog).getByLabelText(/width/i);
-      expect(inputWidth.value).toBe('3');
+      expect(inputWidth.value).toBe(initialWidth.toString());
 
       // 04. The dialog shows a "height" input with a value of 3
       const inputHeight = within(dialog).getByLabelText(/height/i);
-      expect(inputHeight.value).toBe('3');
+      expect(inputHeight.value).toBe(initialHeight.toString());
 
       // 05. The dialog shows a button with "OK" text
       const btnOK = within(dialog).getByText(/ok/i);
@@ -171,7 +172,7 @@ describe('App', function () {
 
       // 03. The dialog shows a "width" input with a value of 3
       const inputWidth = within(dialog).getByLabelText(/width/i);
-      expect(inputWidth.value).toBe('3');
+      expect(inputWidth.value).toBe(initialWidth.toString());
 
       // 04. The dialog shows a button with "OK" text
       const btnOK = within(dialog).getByText(/ok/i);
@@ -210,7 +211,7 @@ describe('App', function () {
 
       // 03. The dialog shows a "width" input with a value of 3
       const inputWidth = within(dialog).getByLabelText(/width/i);
-      expect(inputWidth.value).toBe('3');
+      expect(inputWidth.value).toBe(initialWidth.toString());
 
       // 04. The dialog shows a button with "Cancel" text
       const btnCancel = within(dialog).getByText(/cancel/i);
@@ -227,9 +228,9 @@ describe('App', function () {
     })();
 
     // 08. The Grid should have 3 rows and 3 columns
-    isGridSize(3, 3);
+    isGridSize(initialWidth, initialHeight);
 
     // 09. The sidebar shows width: 3, height: 3, filled: 0, islands 0
-    hasData(3, 3, 0, 0);
+    hasData(initialWidth, initialHeight, 0, 0);
   });
 });

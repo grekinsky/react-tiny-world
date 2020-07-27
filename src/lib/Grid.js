@@ -97,8 +97,7 @@ export function countIslands(grid) {
 }
 
 /**
- * @todo Create method to resize Grid (may clean the
- *  Grid or preserve filled cells)
+ * Resizes Grid and preserves filled cells
  * @param {Array} grid
  * @param {Number} width
  * @param {Number} height

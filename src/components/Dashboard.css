@@ -1,0 +1,21 @@
+.Dashboard {
+  flex: 1;
+  flex-direction: column;
+  flex: 0 0 200px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.Dashboard-size,
+.Dashboard-data {
+  margin-bottom: 20px;
+}
+
+.Dashboard-size div,
+.Dashboard-data div {
+  margin-top: 5px;
+}
+
+.Dashboard-size .App-button {
+  margin-top: 10px;
+}

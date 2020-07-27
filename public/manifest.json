@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Tiny World",
+  "name": "A small sea world where you can build islands",
   "icons": [
     {
       "src": "favicon.ico",
