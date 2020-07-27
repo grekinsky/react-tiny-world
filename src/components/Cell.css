@@ -1,7 +1,12 @@
 .grid-cell {
   background-color: #2196f3;
   flex: 1;
-  transition: background-color 75ms;
+  transition: background-color 75ms, filter 150ms;
+  cursor: pointer;
+}
+
+.grid-cell:hover {
+  filter: brightness(95%);
 }
 
 .grid-cell--filled {
