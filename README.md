@@ -9,11 +9,11 @@ This tiny world will be represented by a grid that starts as all sea and then th
 ### UI options for render
 
 - Canvas
-  **Pros:** fast render, better UI performance
-  **Cons:** harder to code, interactions and resize canvas can be tricky
+  - **Pros:** fast render, better UI performance
+  - **Cons:** harder to code, interactions and resize canvas can be tricky
 - HTML containers (div or span)
-  **Pros:** easier to code, interactions and resize of canvas are easy to achieve
-  **Cons:** slower to render affecting UI performance on a large set of elements, might consider react fiber as a performance upgrade
+  - **Pros:** easier to code, interactions and resize of canvas are easy to achieve
+  - **Cons:** slower to render affecting UI performance on a large set of elements, might consider react fiber as a performance upgrade
 
 ### UI options for CSS
 
