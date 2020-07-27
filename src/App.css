@@ -26,28 +26,6 @@
   color: #666;
 }
 
-.App-panel {
-  flex: 1;
-  flex-direction: column;
-  flex: 0 0 200px;
-  padding-left: 20px;
-  text-align: left;
-}
-
-.App-panel-size,
-.App-panel-data {
-  margin-bottom: 20px;
-}
-
-.App-panel-size div,
-.App-panel-data div {
-  margin-top: 5px;
-}
-
-.App-panel-size .App-button {
-  margin-top: 10px;
-}
-
 .App-button {
   background: none;
   border: none;
